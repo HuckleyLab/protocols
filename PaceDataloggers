@@ -1,0 +1,93 @@
+XR-5 Datalogger
+
+SOFTWARE
+Download software from here: http://www.pace-sci.com/LogXR.htm. Open LogXR
+
+go to Port>Select>(select the appropriate COM port(COM4 for me))
+if you don't know which COM port is for USB, open device manager to check
+
+Setup>extract>
+
+Setup should be as follows:
+Log Mode: Manual/Slow
+Log Interval: 10 seconds
+Log Ambient: should be checked
+Excitation Time: 30ms
+
+Channel 1: OFF
+Channel 2: ON
+	Description: Solar Radiation Sensor
+	Type: 0-2.5V
+	Mode: Standard
+	Slope: 600 (For units of W/m2)
+	Offset: 0
+Channel 3: OFF
+Channel 4: ON
+	Description: Sanguinipes temp
+	Type: Temperature PT9xx (C .rvt)
+	Mode: Average
+	Half-Range: selected
+	Slope: 1
+	Offset: 0
+Channel 5: ON
+	Description: Sanguinipes temp
+	Type: Temperature PT9xx (C .rvt)
+	Mode: Average
+	Half-Range: selected
+	Slope: 1
+	Offset: 0
+Channel 6: ON
+	Description: Soil temp
+	Type: Temperature PT9xx (C .rvt)
+	Mode: Average
+	Half-Range: selected
+	Slope: 1
+	Offset: 0
+Channel 7: ON
+	Description: Ambient temp
+	Type: Temperature PT9xx (C .rvt)
+	Mode: Average
+	Half-Range: selected
+	Slope: 1
+	Offset: 0
+Channel 8: ON
+	Description: Bivatatus temp
+	Type: Temperature PT9xx (C .rvt)
+	Mode: Average
+	Half-Range: selected
+	Slope: 1
+	Offset: 0
+
+Channel X (Pulse tab): ON
+	Description: Avg wind speed
+	Type: Solid State Switch
+	Frequency: checked
+	Slope: 2.25 (wind speed in MPH – see page 14 for other units of measure)
+	Offset: 0
+
+Start by selecting Logging>Start
+Check to see if the green light on the data logger is blinking to make sure it is recording data
+
+WIRE SETUP
+Anemometer
+Wire the WSD-100 Cable to the XR5 as follows: 
+	Black 	X 	Wind speed contact closure
+	Green 	1 	Wind direction potentiometer
+	Yellow	D 	2.5v Potentiometer supply voltage
+	Red 	C 	Ground
+				
+Solar radiation
+SRS-100 with 2 ft cable:
+	Green 	Channel 2 Output signal: 1.67 mV per W/m2
+	Red 	C 	Ground
+	Black 	C 	Ground
+	Yellow 	E 	Power: +5V DC, 1 mA
+
+Temperature
+PT9xx sensors:
+	Connect one lead of the temperature probe to the Channel #. 
+	Connect the other lead to a ‘C’ terminal. Leads are not polarity sensitive.
+
+Check that the sensors are working properly by selecting Real Time>Graph and looking at the readings.
+
+
